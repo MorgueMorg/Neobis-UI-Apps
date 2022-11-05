@@ -6,7 +6,7 @@ class CryptoApp extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<CryptoApp> {
-  List<Widget> listImage = [
+  final List<Widget> listImage = [
     IconButton(
         onPressed: () {},
         icon: Image.asset('images/bitcoin.png', width: 50, height: 50)),
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<CryptoApp> {
         icon: Image.asset('images/ripple.png', width: 50, height: 50)),
   ];
 
-  List<Color> chipColors = [
+  final List<Color> chipColors = [
     Colors.red.shade50,
     Colors.indigo.shade50,
     Colors.green.shade50,
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<CryptoApp> {
     Colors.blue.shade50
   ];
 
-  List<String> listText = [
+  final List<String> listText = [
     'Bitcoin',
     'Etherium',
     'Litecoin',
@@ -45,13 +45,13 @@ class _MyHomePageState extends State<CryptoApp> {
     'Ripple'
   ];
 
-  List<String> listTicket = ['BTC', 'ETH', 'LTC', 'XRP', 'XRP', 'XRP'];
+  final List<String> listTicket = ['BTC', 'ETH', 'LTC', 'XRP', 'XRP', 'XRP'];
 
   // ! Из за плюсов в числах по макету, пришлось делать из чисел строки
-  List<String> listGain = ['+1.6', '-0.82', '-2.10', '+0.27', '+0.27', '+0.27'];
+  final List<String> listGain = ['+1.6', '-0.82', '-2.10', '+0.27', '+0.27', '+0.27'];
 
   // ! Из за запятых в числах по макету, пришлось делать из чисел строки
-  List<String> listPrice = [
+  final List<String> listPrice = [
     '29,850.15',
     '10,561.24',
     '3,676.76',
@@ -60,11 +60,11 @@ class _MyHomePageState extends State<CryptoApp> {
     '5,241.62'
   ];
 
-  List<double> listTotal = [2.73, 47.61, 39.27, 16447.65, 16447.65, 16447.65];
+  final List<double> listTotal = [2.73, 47.61, 39.27, 16447.65, 16447.65, 16447.65];
 
   void _changeSomething() {
     setState(() {
-      //Some state changing stuff
+      // Пустой стейт для листвью билдера
     });
   }
 
