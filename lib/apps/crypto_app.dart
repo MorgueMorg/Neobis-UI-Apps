@@ -27,7 +27,14 @@ class _MyHomePageState extends State<CryptoApp> {
         icon: Image.asset('images/ripple.png', width: 50, height: 50)),
   ];
 
-  List<Color> chipColors = [Colors.red.shade100, Colors.indigo.shade100, Colors.green.shade50, Colors.blue.shade50, Colors.blue.shade50, Colors.blue.shade50];
+  List<Color> chipColors = [
+    Colors.red.shade50,
+    Colors.indigo.shade50,
+    Colors.green.shade50,
+    Colors.blue.shade50,
+    Colors.blue.shade50,
+    Colors.blue.shade50
+  ];
 
   List<String> listText = [
     'Bitcoin',
@@ -185,6 +192,31 @@ class _MyHomePageState extends State<CryptoApp> {
             );
           },
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 30,
+        backgroundColor: Colors.white,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard_outlined),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("images/chart.png"),
+            ),
+            label: ''
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("images/account.png"),
+            ),
+            label: ''
+          ),
+        ],
+        selectedItemColor: Colors.redAccent,
       ),
     );
   }
