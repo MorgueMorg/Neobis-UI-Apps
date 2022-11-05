@@ -43,7 +43,7 @@ Widget build(BuildContext context) {
 		});
 		},
 		
-		child: Image.asset('images/ball$ballNumber.png'),
+		child: Image.asset('assets/ballGame/ball$ballNumber.png'),
 	),
 	);
 }

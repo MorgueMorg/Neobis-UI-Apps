@@ -9,22 +9,22 @@ class _MyHomePageState extends State<CryptoApp> {
   final List<Widget> listImage = [
     IconButton(
         onPressed: () {},
-        icon: Image.asset('images/bitcoin.png', width: 50, height: 50)),
+        icon: Image.asset('assets/cryptoImages/bitcoin.png', width: 50, height: 50)),
     IconButton(
         onPressed: () {},
-        icon: Image.asset('images/etherium.png', width: 50, height: 50)),
+        icon: Image.asset('assets/cryptoImages/etherium.png', width: 50, height: 50)),
     IconButton(
         onPressed: () {},
-        icon: Image.asset('images/litecoin.png', width: 50, height: 50)),
+        icon: Image.asset('assets/cryptoImages/litecoin.png', width: 50, height: 50)),
     IconButton(
         onPressed: () {},
-        icon: Image.asset('images/ripple.png', width: 50, height: 50)),
+        icon: Image.asset('assets/cryptoImages/ripple.png', width: 50, height: 50)),
     IconButton(
         onPressed: () {},
-        icon: Image.asset('images/ripple.png', width: 50, height: 50)),
+        icon: Image.asset('assets/cryptoImages/ripple.png', width: 50, height: 50)),
     IconButton(
         onPressed: () {},
-        icon: Image.asset('images/ripple.png', width: 50, height: 50)),
+        icon: Image.asset('assets/cryptoImages/ripple.png', width: 50, height: 50)),
   ];
 
   final List<Color> chipColors = [
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<CryptoApp> {
                     child: Container(
                       // ! Из фигмы
                       // child: Image.asset(
-                      //   'images/settings.png',
+                      //   'assets/cryptoImages/settings.png',
                       // ),
                       // ! Из либы флаттера (мне нравится больше)
                       child: IconButton(
@@ -206,14 +206,14 @@ class _MyHomePageState extends State<CryptoApp> {
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(
-              AssetImage("images/chart.png"),
+              AssetImage("assets/cryptoImages/chart.png"),
               color: Colors.grey,
             ),
             label: ''
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(
-              AssetImage("images/account.png"),
+              AssetImage("assets/cryptoImages/account.png"),
               color: Colors.grey,
             ),
             label: ''
