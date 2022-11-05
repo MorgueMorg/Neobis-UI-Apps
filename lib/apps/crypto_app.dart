@@ -27,6 +27,8 @@ class _MyHomePageState extends State<CryptoApp> {
         icon: Image.asset('images/ripple.png', width: 50, height: 50)),
   ];
 
+  List<Color> chipColors = [Colors.red.shade100, Colors.indigo.shade100, Colors.green.shade50, Colors.blue.shade50, Colors.blue.shade50, Colors.blue.shade50];
+
   List<String> listText = [
     'Bitcoin',
     'Etherium',
@@ -131,6 +133,7 @@ class _MyHomePageState extends State<CryptoApp> {
                       Row(
                         children: [
                           Chip(
+                            backgroundColor: chipColors[index],
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(20),
