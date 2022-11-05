@@ -118,7 +118,7 @@ class _MyHomePageState extends State<CryptoApp> {
                 padding: const EdgeInsets.only(top: 15),
                 child: Text(
                   "посмотреть все",
-                  style: TextStyle(fontSize: 14, color: Colors.red),
+                  style: TextStyle(fontSize: 14, color: Colors.red, fontWeight: FontWeight.w300),
                 ),
               ),
             ),
@@ -194,6 +194,7 @@ class _MyHomePageState extends State<CryptoApp> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        // elevation: 0,
         iconSize: 30,
         backgroundColor: Colors.white,
         showSelectedLabels: false,
@@ -206,12 +207,14 @@ class _MyHomePageState extends State<CryptoApp> {
           BottomNavigationBarItem(
             icon: ImageIcon(
               AssetImage("images/chart.png"),
+              color: Colors.grey,
             ),
             label: ''
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(
               AssetImage("images/account.png"),
+              color: Colors.grey,
             ),
             label: ''
           ),
