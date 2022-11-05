@@ -27,7 +27,14 @@ class _MyHomePageState extends State<CryptoApp> {
         icon: Image.asset('images/ripple.png', width: 50, height: 50)),
   ];
 
-  List<String> listText = ['Bitcoin', 'Etherium', 'Litecoin', 'Ripple', 'Ripple', 'Ripple'];
+  List<String> listText = [
+    'Bitcoin',
+    'Etherium',
+    'Litecoin',
+    'Ripple',
+    'Ripple',
+    'Ripple'
+  ];
 
   List<String> listTicket = ['BTC', 'ETH', 'LTC', 'XRP', 'XRP', 'XRP'];
 
@@ -35,7 +42,14 @@ class _MyHomePageState extends State<CryptoApp> {
   List<String> listGain = ['+1.6', '-0.82', '-2.10', '+0.27', '+0.27', '+0.27'];
 
   // ! Из за запятых в числах по макету, пришлось делать из чисел строки
-  List<String> listPrice = ['29,850.15', '10,561.24', '3,676.76', '5,241.62', '5,241.62', '5,241.62' ];
+  List<String> listPrice = [
+    '29,850.15',
+    '10,561.24',
+    '3,676.76',
+    '5,241.62',
+    '5,241.62',
+    '5,241.62'
+  ];
 
   List<double> listTotal = [2.73, 47.61, 39.27, 16447.65, 16447.65, 16447.65];
 
@@ -90,15 +104,15 @@ class _MyHomePageState extends State<CryptoApp> {
               ),
             ]),
             Align(
-                alignment: Alignment.bottomRight,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 15),
-                  child: Text(
-                    "посмотреть все",
-                    style: TextStyle(fontSize: 14, color: Colors.red),
-                  ),
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Text(
+                  "посмотреть все",
+                  style: TextStyle(fontSize: 14, color: Colors.red),
                 ),
               ),
+            ),
           ],
         ),
       ),
@@ -116,7 +130,16 @@ class _MyHomePageState extends State<CryptoApp> {
                     children: [
                       Row(
                         children: [
-                          listImage[index],
+                          Chip(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                            label: listImage[index],
+                            labelPadding: EdgeInsets.only(
+                                top: 5, bottom: 5, left: 5, right: 5),
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(left: 15),
                             child: Column(
