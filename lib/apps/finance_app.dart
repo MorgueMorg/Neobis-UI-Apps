@@ -90,34 +90,34 @@ class _MyHomePageState extends State<FinanceApp> {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Balance App UI'),
-          centerTitle: true,
+          toolbarHeight: 100,
+          backgroundColor: Colors.white,
+          elevation: 0,
+          title:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Text(
+              "Баланс",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600),
+            ),
+            SizedBox(height: 5),
+            Text(
+              '\$1200.89',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ]),
         ),
         body: Center(
           child: Column(
             // Main column, everything in here
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 15),
-                child: Text(
-                  'Баланс',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  '\$1200.89',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -136,6 +136,7 @@ class _MyHomePageState extends State<FinanceApp> {
                       icon: const Icon(Icons.chevron_right_rounded)),
                 ],
               ),
+              SizedBox(height: 20,),
               Expanded(
                 child: ListView.builder(
                   itemCount: _listTitles.length,
