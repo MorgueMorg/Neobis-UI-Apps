@@ -6,6 +6,8 @@ class FinanceApp extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<FinanceApp> {
+  int _selectedIndex = 0;
+
   final List<String> _listTitles = [
     'Дом',
     'Покупки',
@@ -30,7 +32,7 @@ class _MyHomePageState extends State<FinanceApp> {
     321,
     574,
     124,
-    756,
+    765,
     324,
     726,
     325,
@@ -38,7 +40,8 @@ class _MyHomePageState extends State<FinanceApp> {
 
   void _changeIndex(int index) {
     setState(() {
-      // Пустой стейт для листвью билдера
+      // Cтейт для смены индекса (пригодится снизу в футере)
+      _selectedIndex = index;
     });
   }
 
@@ -141,7 +144,7 @@ class _MyHomePageState extends State<FinanceApp> {
               /* Короче я дико тупанул. По идее тут лучше было бы юзать статический список, но я юзанул динамику, из за чего пришлось ставить сайдбокс чтобы снизу нормально смотрелся текст "см. еще". Если вместо бокса воткнуть expanded, текст будет прям в самом низу, не по фигме в общем будет. Но теперь на 14 айфоне выглядит как на фигме. */
               SizedBox(
                 width: 1000,
-                height: 550.0,
+                height: 540.0,
                 child: ListView.builder(
                   itemCount: _listTitles.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -189,10 +192,40 @@ class _MyHomePageState extends State<FinanceApp> {
                   },
                 ),
               ),
-              Text("См.ещё", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+              Text("См. ещё", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
             ],
           ),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+        iconSize: 30,
+        backgroundColor: Colors.white,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/financeImages/active.png"),
+            ),
+            label: 'Главная'
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/financeImages/union.png"),
+            ),
+            label: 'Отчёты'
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/financeImages/account.png"),
+            ),
+            label: 'Профиль'
+          ),
+        ],
+        // Для смены айтема в футере, состояние сверху
+        selectedItemColor: Colors.black,
+        currentIndex: _selectedIndex,
+        onTap: _changeIndex,
+      ),
       ),
     );
   }
