@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neobisui/apps/magic_ball_app.dart';
 import 'package:neobisui/apps/crypto_app.dart';
 import 'package:neobisui/apps/finance_app.dart';
+import 'package:neobisui/apps/travel_app.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         '/magic_ball': (context) => BallPage(),
         '/crypto_app': (context) => CryptoApp(),
         '/finance_app': (context) => FinanceApp(),
+        '/travel_app': (context) => TravelApp(),
       },
     );
   }
@@ -45,6 +47,11 @@ class MyHomePage extends StatelessWidget {
                   Navigator.pushNamed(context, '/finance_app');
                 },
                 child: Text('Finance App')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/travel_app');
+                },
+                child: Text('Travel App')),
           ],
         ),
       ),
