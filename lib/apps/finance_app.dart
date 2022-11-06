@@ -136,56 +136,51 @@ class _MyHomePageState extends State<FinanceApp> {
           ]),
         ),
         body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: _listTitles.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      leading: Chip(
-                        label: _listImages[index],
-                        backgroundColor: chipColors[index],
-                        padding: EdgeInsets.all(0),
-                        labelPadding: EdgeInsets.all(0),
+          child: ListView.builder(
+            itemCount: _listTitles.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Column(
+                children: [
+                  ListTile(
+                    leading: Chip(
+                      label: _listImages[index],
+                      backgroundColor: chipColors[index],
+                      padding: EdgeInsets.all(0),
+                      labelPadding: EdgeInsets.all(0),
+                    ),
+                    title: Text(
+                      _listTitles[index],
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
                       ),
-                      title: Text(
-                        _listTitles[index],
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
+                    ),
+                    trailing: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '\$${_listSpent[index]}',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                      trailing: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            '\$${_listSpent[index]}',
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
-                            ),
+                        Text(
+                          _listDesc[index],
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey,
                           ),
-                          Text(
-                            _listDesc[index],
-                            style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(),
+                ],
+              );
+            },
           ),
         ),
       ),
