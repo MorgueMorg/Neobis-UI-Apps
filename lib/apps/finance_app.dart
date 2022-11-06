@@ -136,51 +136,61 @@ class _MyHomePageState extends State<FinanceApp> {
           ]),
         ),
         body: Center(
-          child: ListView.builder(
-            itemCount: _listTitles.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Column(
-                children: [
-                  ListTile(
-                    leading: Chip(
-                      label: _listImages[index],
-                      backgroundColor: chipColors[index],
-                      padding: EdgeInsets.all(0),
-                      labelPadding: EdgeInsets.all(0),
-                    ),
-                    title: Text(
-                      _listTitles[index],
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    trailing: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.end,
+          child: Column(
+            children: [
+              /* Короче я дико тупанул. По идее тут лучше было бы юзать статический список, но я юзанул динамику, из за чего пришлось ставить сайдбокс чтобы снизу нормально смотрелся текст "см. еще". Если вместо бокса воткнуть expanded, текст будет прям в самом низу, не по фигме в общем будет. Но теперь на 14 айфоне выглядит как на фигме. */
+              SizedBox(
+                width: 1000,
+                height: 550.0,
+                child: ListView.builder(
+                  itemCount: _listTitles.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
                       children: [
-                        Text(
-                          '\$${_listSpent[index]}',
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
+                        ListTile(
+                          leading: Chip(
+                            label: _listImages[index],
+                            backgroundColor: chipColors[index],
+                            padding: EdgeInsets.all(0),
+                            labelPadding: EdgeInsets.all(0),
+                          ),
+                          title: Text(
+                            _listTitles[index],
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          trailing: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                '\$${_listSpent[index]}',
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              Text(
+                                _listDesc[index],
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        Text(
-                          _listDesc[index],
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey,
-                          ),
-                        ),
+                        Divider(),
                       ],
-                    ),
-                  ),
-                  Divider(),
-                ],
-              );
-            },
+                    );
+                  },
+                ),
+              ),
+              Text("См.ещё", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+            ],
           ),
         ),
       ),
