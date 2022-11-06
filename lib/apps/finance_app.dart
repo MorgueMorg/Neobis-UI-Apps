@@ -90,7 +90,7 @@ class _MyHomePageState extends State<FinanceApp> {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          toolbarHeight: 100,
+          toolbarHeight: 170,
           backgroundColor: Colors.white,
           elevation: 0,
           title:
@@ -111,32 +111,37 @@ class _MyHomePageState extends State<FinanceApp> {
                 fontWeight: FontWeight.w700,
               ),
             ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconButton(
+                    color: Colors.black,
+                    onPressed: () {},
+                    icon: const Icon(Icons.chevron_left_rounded)),
+                const Text(
+                  'Апрель 2020',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                IconButton(
+                    color: Colors.black,
+                    onPressed: () {},
+                    icon: const Icon(Icons.chevron_right_rounded)),
+              ],
+            ),
           ]),
         ),
         body: Center(
           child: Column(
-            // Main column, everything in here
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.chevron_left_rounded)),
-                  const Text(
-                    'Апрель 2020',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.chevron_right_rounded)),
-                ],
+              SizedBox(
+                height: 20,
               ),
-              SizedBox(height: 20,),
               Expanded(
                 child: ListView.builder(
                   itemCount: _listTitles.length,
