@@ -3,6 +3,7 @@ import 'package:neobisui/apps/magic_ball_app.dart';
 import 'package:neobisui/apps/crypto_app.dart';
 import 'package:neobisui/apps/finance_app.dart';
 import 'package:neobisui/apps/travel_app.dart';
+import 'package:neobisui/apps/singles_app.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         '/crypto_app': (context) => CryptoApp(),
         '/finance_app': (context) => FinanceApp(),
         '/travel_app': (context) => TravelApp(),
+        '/singles_app': (context) => SinglesApp(),
       },
     );
   }
@@ -52,6 +54,11 @@ class MyHomePage extends StatelessWidget {
                   Navigator.pushNamed(context, '/travel_app');
                 },
                 child: Text('Travel App')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/singles_app');
+                },
+                child: Text('Singles App')),
           ],
         ),
       ),
