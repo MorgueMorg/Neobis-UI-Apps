@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+/* Во фрейме в фигме четко указано что это 11 айфон, поэтому верстал под его эмулятор */
 class SinglesApp extends StatefulWidget {
   @override
+  // Состояние чтобы футер был с активными айтемами≈
   State<SinglesApp> createState() => _MyHomePageState();
 }
 
-/* Во фрейме в фигме четко указано что это 11 айфон, поэтому верстал под его эмулятор */
-class _MyHomePageState extends State <SinglesApp> {
+class _MyHomePageState extends State<SinglesApp> {
   int _selectedIndex = 0;
   void _changeIndex(int index) {
     setState(() {
@@ -43,133 +44,159 @@ class _MyHomePageState extends State <SinglesApp> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
+        padding: const EdgeInsets.all(20),
+        child: ListView(
           children: [
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "SOS",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text("Mini meltdown? Get some",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w400)),
-                    Text("Headspace in a hurry",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w400)),
-                  ],
+                Divider(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "SOS",
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.w400),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text("Mini meltdown? Get some",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400)),
+                          Text("Headspace in a hurry",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image(
+                              image:
+                                  AssetImage('assets/singlesImages/Book.png')),
+                          Icon(Icons.arrow_forward_ios_rounded)
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    Image(image: AssetImage('assets/singlesImages/Book.png')),
-                    Icon(Icons.arrow_forward_ios_rounded)
-                  ],
-                )
-              ],
-            ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image(image: AssetImage('assets/singlesImages/Bookshelf.png')),
-                Row(
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          "On-the-Go",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.w400),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text("Mindful living? Get your",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400)),
-                        Text("Headspace to go",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400)),
-                      ],
-                    ),
-                    Icon(Icons.arrow_forward_ios_rounded)
-                  ],
-                )
-              ],
-            ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Classic",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text("Like it simple? Get some",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w400)),
-                    Text("extra Headspace",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w400)),
-                  ],
+                Divider(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image(
+                          image:
+                              AssetImage('assets/singlesImages/Bookshelf.png')),
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                "On-the-Go",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.w400),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text("Mindful living? Get your",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400)),
+                              Text("Headspace to go",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400)),
+                            ],
+                          ),
+                          Icon(Icons.arrow_forward_ios_rounded)
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    Image(
-                        image: AssetImage('assets/singlesImages/Diploma.png')),
-                    Icon(Icons.arrow_forward_ios_rounded)
-                  ],
-                )
+                Divider(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Classic",
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.w400),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text("Like it simple? Get some",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400)),
+                          Text("extra Headspace",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w400)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image(
+                              image: AssetImage(
+                                  'assets/singlesImages/Diploma.png')),
+                          Icon(Icons.arrow_forward_ios_rounded)
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                Divider(),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image(
+                          image: AssetImage('assets/singlesImages/Globus.png')),
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                "SOS",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.w400),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text("Mini meltdown? Get some",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400)),
+                              Text("Headspace in a hurry",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400)),
+                            ],
+                          ),
+                          Icon(Icons.arrow_forward_ios_rounded)
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                Divider(),
               ],
             ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image(image: AssetImage('assets/singlesImages/Globus.png')),
-                Row(
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          "SOS",
-                          style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.w400),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text("Mini meltdown? Get some",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400)),
-                        Text("Headspace in a hurry",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400)),
-                      ],
-                    ),
-                    Icon(Icons.arrow_forward_ios_rounded)
-                  ],
-                )
-              ],
-            ),
-            Divider(),
           ],
         ),
       ),
@@ -180,23 +207,20 @@ class _MyHomePageState extends State <SinglesApp> {
         showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage("assets/singlesImages/Series.png"),
-            ),
-            label: 'Series'
-          ),
+              icon: ImageIcon(
+                AssetImage("assets/singlesImages/Series.png"),
+              ),
+              label: 'Series'),
           BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage("assets/singlesImages/Headphone.png"),
-            ),
-            label: 'Headspace'
-          ),
+              icon: ImageIcon(
+                AssetImage("assets/singlesImages/Headphone.png"),
+              ),
+              label: 'Headspace'),
           BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage("assets/financeImages/account.png"),
-            ),
-            label: 'Profile'
-          ),
+              icon: ImageIcon(
+                AssetImage("assets/financeImages/account.png"),
+              ),
+              label: 'Profile'),
         ],
         selectedItemColor: Colors.black,
         currentIndex: _selectedIndex,
