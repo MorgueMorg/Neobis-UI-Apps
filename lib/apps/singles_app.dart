@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 
+class SinglesApp extends StatefulWidget {
+  @override
+  State<SinglesApp> createState() => _MyHomePageState();
+}
+
 /* Во фрейме в фигме четко указано что это 11 айфон, поэтому верстал под его эмулятор */
-class SinglesApp extends StatelessWidget {
+class _MyHomePageState extends State <SinglesApp> {
+  int _selectedIndex = 0;
+  void _changeIndex(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -160,6 +172,35 @@ class SinglesApp extends StatelessWidget {
             Divider(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 30,
+        backgroundColor: Colors.grey.shade50,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/singlesImages/Series.png"),
+            ),
+            label: 'Series'
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/singlesImages/Headphone.png"),
+            ),
+            label: 'Headspace'
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/financeImages/account.png"),
+            ),
+            label: 'Profile'
+          ),
+        ],
+        selectedItemColor: Colors.black,
+        currentIndex: _selectedIndex,
+        onTap: _changeIndex,
       ),
     );
   }
